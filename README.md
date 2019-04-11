@@ -45,6 +45,6 @@ npm run dev
 ```
 # nodeapi
 
-#DIA1
+#DIA2
 
-CLUSTER VER PDF
+BUSCAMOS PLANTILLAS HTML (THEMES)
