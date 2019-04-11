@@ -44,3 +44,7 @@ To run the application in development use:
 npm run dev
 ```
 # nodeapi
+
+#DIA1
+
+CLUSTER VER PDF
