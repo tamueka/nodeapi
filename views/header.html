@@ -36,7 +36,7 @@
             <a class="navbar-brand js-scroll-trigger" href="/"><%= titulo %></a>
 
             <% getLocales().forEach(lang => { %>
-            <a href="/"><%= lang.toUpperCase() %></a>&nbsp;
+            <a href="/lang/<%= lang %>"><%= lang.toUpperCase() %></a>&nbsp;
             <% }) %>
 
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
