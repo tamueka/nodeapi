@@ -1,3 +1,5 @@
+
+
 # NodeApi
 
 ## Install
@@ -13,7 +15,6 @@ Copy .env.example to .env and review the values.
 Ejecutamos MongoDB en Windows:
 "C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
 "C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe"
-
 
 To initialize the database use:
 
@@ -35,7 +36,6 @@ To start the application in cluster mode:
 npm run cluster
 ```
 
-
 ## Development
 
 To run the application in development use:
@@ -43,4 +43,19 @@ To run the application in development use:
 ```shell
 npm run dev
 ```
-# nodeapi
+
+## DIA2
+
+BUSCAMOS PLANTILLAS HTML (THEMES)  
+https://startbootstrap.com/themes
+
+Instalamos http-server: npm i http-server
+
+cd startbootstrap template
+
+http-server
+
+Iniciamos el servidor local para ver theme (modo prueba para ver si funciona)
+
+
+
