@@ -1,12 +1,41 @@
 'use strict';
 
 //Creamos un controller que nos servira para asociar a rutas en app.js
-
+//cargamos el modelo de usuario
+const Usuario = require('../models/Usuario')
 //podemos controllar express con ficheros controller o con rutas
 class LoginController{
     //GET '/' 
     index(req, res, next){
-        res.render('login')
+        res.locals.email = '';
+        res.locals.error = '';
+        res.render('login');
+    }
+
+    // POST
+    async post(req, res, next){
+        try{
+        //recoger parametros del cuerpo de la peticion
+        const email = req.body.email;
+        const password = req.body.password;
+
+        console.log(email, password)
+
+        //buscar usuario
+        const usuario = await Usuario.findOne({ email: email });
+
+        console.log('usuario encontrado: ', usuario)
+        if(!usuario || password != usuario.password){
+            res.locals.email = email;
+            res.locals.error = '';
+            res.render('login')
+            //podemos hacerlo asi res.render('login', {email: email, error: error})
+        }
+
+        
+        }catch(err){
+            next(err)
+        }
     }
 }
 

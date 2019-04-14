@@ -10,5 +10,8 @@
 	"Aplcation title": "Aplcation title",
 	"This is an amazing app!": "Esto es una app maravillosa!",
 	"login": "login",
-	"Please login to access": "Por favor identificate para acceder"
+	"Please login to access": "Por favor identificate para acceder",
+	"Name": "Nombre",
+	"Password": "Password",
+	"Submit": "Enviar"
 }

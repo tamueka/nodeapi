@@ -1,0 +1,8 @@
+{
+    "usuarios": [{
+            "name": "Administrator",
+            "email": "admin@example.com",
+            "password": "admin"
+        }
+    ]
+}

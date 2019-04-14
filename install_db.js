@@ -5,8 +5,10 @@ require('dotenv').config();
 const readline = require('readline');
 
 const agentes = require('./data/agentes.json').agentes;
+const usuarios = require('./data/usuarios.json').usuarios
 const conn = require('./lib/connectMongoose');
 const Agente = require('./models/Agente');
+const Usuario = require('./models/Usuario');
 
 conn.once('open', async () => {
   try {
@@ -18,7 +20,7 @@ conn.once('open', async () => {
     }
 
     await initAgentes(agentes);
-    // await initUsers();
+    await initUsuarios(usuarios);
     // await initStores();
     // ...
 
@@ -56,4 +58,14 @@ async function initAgentes(agentes) {
   // cargar los nuevos documentos
   const inserted = await Agente.insertMany(agentes);
   console.log(`Insertados ${inserted.length} agentes.`);
+}
+
+  async function initUsuarios(usuarios) {
+      // eliminar los documentos actuales
+      const deleted = await Usuario.deleteMany();
+      console.log(`Eliminados ${deleted.n} usuarios.`);
+
+      // cargar los nuevos documentos
+      const inserted = await Usuario.insertMany(usuarios);
+      console.log(`Insertados ${inserted.length} usuarios.`);
 }

@@ -60,6 +60,7 @@ app.use('/about',   require('./routes/about'));
 app.use('/lang',    require('./routes/lang'));
 //usamos el estilo de controladores para estructurar las rutas
 app.get('/login', loginController.index);
+app.post('/login', loginController.post);
 
 //podemos usar un archivo routes y donde llamamos a todas las rutas
 
