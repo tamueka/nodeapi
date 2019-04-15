@@ -57,5 +57,8 @@ http-server
 
 Iniciamos el servidor local para ver theme (modo prueba para ver si funciona)
 
+Hashear contraseñas: BCRYPT
+https://codahale.com/how-to-safely-store-a-password/
+
 
 

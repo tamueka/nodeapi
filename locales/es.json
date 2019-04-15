@@ -13,5 +13,6 @@
 	"Please login to access": "Por favor identificate para acceder",
 	"Name": "Nombre",
 	"Password": "Password",
-	"Submit": "Enviar"
+	"Submit": "Enviar",
+	"Invalid credentials": "Credenciales no válidas"
 }

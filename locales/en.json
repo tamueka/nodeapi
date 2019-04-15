@@ -13,5 +13,6 @@
 	"Please login to access": "Please login to access",
 	"Name": "Name",
 	"Password": "Password",
-	"Submit": "Submit"
+	"Submit": "Submit",
+	"Invalid credentials": "Invalid credentials"
 }

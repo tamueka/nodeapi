@@ -14,7 +14,7 @@ class LoginController{
 
     // POST
     async post(req, res, next){
-        try{
+        try{ //usamos try cath para controlar errores
         //recoger parametros del cuerpo de la peticion
         const email = req.body.email;
         const password = req.body.password;
@@ -27,10 +27,12 @@ class LoginController{
         console.log('usuario encontrado: ', usuario)
         if(!usuario || password != usuario.password){
             res.locals.email = email;
-            res.locals.error = '';
+            res.locals.error = res.__('Invalid credentials');
             res.render('login')
             //podemos hacerlo asi res.render('login', {email: email, error: error})
         }
+
+        //usuario encontrado y password ok
 
         
         }catch(err){
@@ -38,5 +40,6 @@ class LoginController{
         }
     }
 }
+
 
 module.exports = new LoginController(); //creo un objeto y lo exporto, los modulos son singleton
