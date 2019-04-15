@@ -60,10 +60,17 @@ async function initAgentes(agentes) {
   console.log(`Insertados ${inserted.length} agentes.`);
 }
 
-  async function initUsuarios(usuarios) {
+  async function initUsuarios(usuarios) {   //funcion async 
       // eliminar los documentos actuales
       const deleted = await Usuario.deleteMany();
       console.log(`Eliminados ${deleted.n} usuarios.`);
+
+      //hacer hash de las passwords
+      //usuarios.forEach( async usuario => {    //no mezclar foreach con async await, no lo hacemos solo uno si lo hacemos en paralelo
+        for(let i = 0; i < usuarios.length; i++){
+        usuarios[i].password = await Usuario.hashPassword(usuarios[i].password)  //one liner javascript
+      }
+
 
       // cargar los nuevos documentos
       const inserted = await Usuario.insertMany(usuarios);
