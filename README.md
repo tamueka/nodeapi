@@ -84,3 +84,7 @@ Ejecutamos npm run install_db (yes)
 Nos actualiza la base de datos y el password de usuario esta hasheado como podemos ver en Roboto
 
 Leer: https://codahale.com/how-to-safely-store-a-password/
+
+Backend con Node.js Avanzado _ Día 3 _ Parte II:: Hash de contraseñas - Sesiones - Middleware de autenticación - Logout
+
+https://plataforma.keepcoding.io/courses/425358/lectures/6533284 
