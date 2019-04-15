@@ -1,0 +1,34 @@
+<% include header.html %>
+
+<section class="download bg-secondary text-center" id="download">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h2 class="section-heading"><%=__('login') %></h2>
+                    <form method ="POST" class="form-signin">
+                        <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg"
+                            alt="" width="72" height="72">
+                        <p><%=__('Please login to access')%></p>
+                        <label>
+                            <p><%=__('Name')%></p>
+                        </label>
+                        <label for="inputEmail" class="sr-only">Email address</label>
+                        <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required
+                            value="<%= email %>">
+                        <label>
+                            <p><%=__('Password')%></p>
+                        </label>
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" 
+                        required>
+                        <div class="checkbox mb-3">
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit"><%=__('Submit')%></button>
+                        <div class="error" style="color: red"><%= error %></div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<% include footer.html %>
