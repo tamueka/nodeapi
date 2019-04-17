@@ -8,5 +8,11 @@
 	"Welcome to": "Welcome to",
 	"hi, you are hacked": "hi, you are hacked",
 	"Aplcation title": "Aplcation title",
-	"This is an amazing app!": "This is an amazing app!"
+	"This is an amazing app!": "This is an amazing app!",
+	"login": "login",
+	"Please login to access": "Please login to access",
+	"Name": "Name",
+	"Password": "Password",
+	"Submit": "Submit",
+	"Invalid credentials": "Invalid credentials"
 }
