@@ -5,6 +5,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2 class="section-heading"><%=__('login') %></h2>
+                <!--hacemos post a nuestro login Controller.js, añadimos input name"email"-->
                     <form method ="POST" class="form-signin">
                         <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg"
                             alt="" width="72" height="72">
@@ -14,7 +15,7 @@
                         </label>
                         <label for="inputEmail" class="sr-only">Email address</label>
                         <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required
-                            value="<%= email %>">
+                            value="<%= email %>"> <!--guardamos la variable email para no tener que estar introduciendo mail una y otra vez-->
                         <label>
                             <p><%=__('Password')%></p>
                         </label>
@@ -24,7 +25,7 @@
                         <div class="checkbox mb-3">
                         </div>
                         <button class="btn btn-lg btn-primary btn-block" type="submit"><%=__('Submit')%></button>
-                        <div class="error" style="color: red"><%= error %></div>
+                        <div class="error" style="color: red"><%= error %></div> <!--ponermos variable error y nos lo muestra por pantalla-->
                     </form>
             </div>
         </div>

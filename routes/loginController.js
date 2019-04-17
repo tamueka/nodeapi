@@ -6,8 +6,8 @@ const Usuario = require('../models/Usuario')
 //podemos controllar express con ficheros controller o con rutas
 class LoginController{
     //GET '/' 
-    index(req, res, next){
-        res.locals.email = '';
+    index(req, res, next){          //metodo que recoge las variables email, error
+        res.locals.email = '';      //res.locals
         res.locals.error = '';
         res.render('login');
     }
@@ -19,22 +19,19 @@ class LoginController{
         const email = req.body.email;
         const password = req.body.password;
 
-        console.log(email, password)
-
         //buscar usuario
         const usuario = await Usuario.findOne({ email: email });
 
         console.log('usuario encontrado: ', usuario)
-        if(!usuario || password != usuario.password){
-            res.locals.email = email;
+        if(!usuario || password != usuario.password){   //comparamos el usuario y la password
+            res.locals.email = email;                   
             res.locals.error = res.__('Invalid credentials');
-            res.render('login')
+            res.render('login')                     //renderiza login
             //podemos hacerlo asi res.render('login', {email: email, error: error})
         }
 
         //usuario encontrado y password ok
 
-        
         }catch(err){
             next(err)
         }
