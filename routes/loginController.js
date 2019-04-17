@@ -2,12 +2,18 @@
 
 //Creamos un controller que nos servira para asociar a rutas en app.js
 //cargamos el modelo de usuario
+
+const bcrypt = require('bcrypt');
+
+
 const Usuario = require('../models/Usuario')
 //podemos controllar express con ficheros controller o con rutas
 class LoginController{
     //GET '/' 
     index(req, res, next){          //metodo que recoge las variables email, error
-        res.locals.email = '';      //res.locals
+        res.locals.email = process.env.NODE_ENV === 'development' ? 'admin@example.com': '';      
+            //res.locals dejamos el email admin@example.com por defecto
+            //cuando esta activado el modo development
         res.locals.error = '';
         res.render('login');
     }
@@ -22,15 +28,17 @@ class LoginController{
         //buscar usuario
         const usuario = await Usuario.findOne({ email: email });
 
-        console.log('usuario encontrado: ', usuario)
-        if(!usuario || password != usuario.password){   //comparamos el usuario y la password
+        console.log('Usuario encontrado');
+        if(!usuario || !await bcrypt.compare (password, usuario.password)){   //comparamos el usuario y la password (se compara la password en claro con el hash)
+            //si el usuario No existe O las password(los hashes) NO coinciden
             res.locals.email = email;                   
             res.locals.error = res.__('Invalid credentials');
-            res.render('login')                     //renderiza login
+            res.render('login')                     //renderiza la pagina de login
             //podemos hacerlo asi res.render('login', {email: email, error: error})
         }
 
         //usuario encontrado y password ok
+        res.send('OK')
 
         }catch(err){
             next(err)
