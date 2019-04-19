@@ -13,7 +13,7 @@ class LoginController{
     index(req, res, next){          //metodo que recoge las variables email, error
         res.locals.email = process.env.NODE_ENV === 'development' ? 'admin@example.com': '';      
             //res.locals dejamos el email admin@example.com por defecto
-            //cuando esta activado el modo development
+            //cuando esta activado el modo development en el package.json modificamos npm run dev
         res.locals.error = '';
         res.render('login');
     }
@@ -32,9 +32,10 @@ class LoginController{
         if(!usuario || !await bcrypt.compare (password, usuario.password)){   //comparamos el usuario y la password (se compara la password en claro con el hash)
             //si el usuario No existe O las password(los hashes) NO coinciden
             res.locals.email = email;                   
-            res.locals.error = res.__('Invalid credentials');
+            res.locals.error = res.__('Invalid credentials'); //pintamos el error
             res.render('login')                     //renderiza la pagina de login
             //podemos hacerlo asi res.render('login', {email: email, error: error})
+            return;
         }
 
         //usuario encontrado y password ok
