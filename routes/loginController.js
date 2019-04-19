@@ -39,7 +39,7 @@ class LoginController{
         }
 
         //usuario encontrado y password ok
-        res.send('OK')
+        res.redirect('privado')
 
         }catch(err){
             next(err)
