@@ -8,11 +8,11 @@
 	"Welcome to": "Bienvenido a",
 	"hi, you are hacked": "hola, has sido hackeado",
 	"Aplcation title": "Aplcation title",
-	"This is an amazing app!": "Esto es una app maravillosa!",
+	"This is an amazing app!": "Esta es una app maravillosa!",
 	"login": "login",
-	"Please login to access": "Por favor identificate para acceder",
+	"Please login to access": "Por favor logueate",
 	"Name": "Nombre",
-	"Password": "Password",
+	"Password": "Contraseña",
 	"Submit": "Enviar",
-	"Invalid credentials": "Credenciales no válidas"
+	"Invalid credentials": "Credenciales invalidas"
 }
